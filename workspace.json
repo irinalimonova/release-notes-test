@@ -5,7 +5,10 @@ layout: null
   "hello": "world",
   "items": [
     {% for post in site.posts %}
-      {{ post.content | jsonify }},
+      {
+        "version": {{ post.title | jsonify }},
+        "description": {{ post.content | jsonify }},
+      },
     {% endfor %}
   ]
 }

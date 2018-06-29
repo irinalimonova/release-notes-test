@@ -8,7 +8,7 @@ layout: null
       {
         "version": {{ post.title | jsonify }},
         "description": {{ post.content | jsonify }},
-      },
+      }{% if forloop.last == false %},{% endif %}
     {% endfor %}
   ]
 }

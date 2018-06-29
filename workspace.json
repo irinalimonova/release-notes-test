@@ -5,7 +5,7 @@ layout: null
   "hello": "world",
   "items": [
     {% for post in site.posts %}
-      "{{ post.content }}",
+      {{ post.content | jsonify }},
     {% endfor %}
   ]
 }

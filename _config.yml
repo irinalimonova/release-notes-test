@@ -1,3 +1,5 @@
 collections:
   workspace_releases:
+    # show – показывать или нет release notes
+    show: true
     output: false

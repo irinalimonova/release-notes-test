@@ -1,0 +1,14 @@
+---
+layout: null
+---
+{
+  "show": {{ site.workspace_releases.show | jsonify }},
+  "items": [
+    {% for item in site.workspace_releases %}
+      {
+        "version": {{ item.title | jsonify }},
+        "description": {{ item.content | jsonify }}
+      }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  ]
+}

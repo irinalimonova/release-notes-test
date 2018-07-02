@@ -1,10 +1,12 @@
 ---
 layout: null
 ---
+{% assign releases = site.collections | where: 'label','workspace_releases' | first %}
+{% assign published_releases = site.workspace_releases | where_exp:"item","item.draft != true" %}
 {
-  "show": {{ site.collections.workspace_releases.show | jsonify }},
+  "show": {{ releases.show | jsonify }},
   "items": [
-    {% for item in site.workspace_releases | where_exp:"item","item.draft != true" %}
+    {% for item in site.published_releases %}
       {
         "version": {{ item.title | jsonify }},
         "description": {{ item.content | jsonify }}

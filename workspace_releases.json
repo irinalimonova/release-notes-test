@@ -2,10 +2,9 @@
 layout: null
 ---
 {
-  "show": {{ site.workspace_releases.show | jsonify }},
-  "output": {{ site.workspace_releases.output | jsonify }},
+  "show": {{ site.collections.workspace_releases.show | jsonify }},
   "items": [
-    {% for item in site.workspace_releases %}
+    {% for item in site.workspace_releases | where_exp:"item","item.draft != true" %}
       {
         "version": {{ item.title | jsonify }},
         "description": {{ item.content | jsonify }}

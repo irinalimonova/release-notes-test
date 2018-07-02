@@ -13,5 +13,13 @@ layout: null
         "description": {{ post.content | jsonify }}
       }{% if forloop.last == false %},{% endif %}
     {% endfor %}
+  ],
+  "pages": [
+    {% for p in site.pages %}
+      {
+        "version": {{ p.title | jsonify }},
+        "description": {{ p.content | jsonify }}
+      }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
   ]
 }

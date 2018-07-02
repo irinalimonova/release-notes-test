@@ -21,5 +21,13 @@ layout: null
         "description": {{ p.content | jsonify }}
       }{% if forloop.last == false %},{% endif %}
     {% endfor %}
+  ],
+  "workspace_releases": [
+    {% for p in site.workspace_releases %}
+      {
+        "version": {{ p.title | jsonify }},
+        "description": {{ p.content | jsonify }}
+      }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
   ]
 }

@@ -3,6 +3,7 @@ layout: null
 ---
 {
   "show": {{ site.workspace_releases.show | jsonify }},
+  "output": {{ site.workspace_releases.output | jsonify }},
   "items": [
     {% for item in site.workspace_releases %}
       {
